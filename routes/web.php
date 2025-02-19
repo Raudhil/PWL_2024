@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+<<<<<<< HEAD
 // Route::get('/', function () {
 //     return view('Selamat');
 // });
@@ -44,6 +45,48 @@ Route::get('/articles/{id}', [PageController::class, 'articles']);
 
 Route::get('/world', function () {
     return 'World';
+=======
+Route::get('/', function () {
+    return view('Selamat');
+});
+
+Route::get('/', function () {
+    return ('Selamat Datang');
+});
+
+Route::get('/hello', function () {
+    return 'Hello World';
+});
+
+Route::get('/world', function () {
+    return 'World';
+});
+
+Route::get('/about', function () {
+    $nama = "Raudhil Firdaus Naufal";
+    $nim = "2341720164";
+    return 'Nama: ' . $nama . ', NIM: ' . $nim;
+});
+
+Route::get('/user/{name}', function ($name) {
+    return 'Nama saya ' . $name;
+});
+
+Route::get('/posts/{post}/comments/{comment}', function ($postId, $commentId) {
+    return 'Pos ke-' . $postId . " Komentar ke-: " . $commentId;
+});
+
+Route::get('/articles/{id}', function ($id) {
+    return 'Ini halaman artikel ke-' . $id;
+});
+
+Route::get('/user/{name?}', function ($name = null) {
+    return 'Nama saya ' . $name;
+});
+
+Route::get('/user/{name?}', function ($name = 'John') {
+    return 'Nama saya ' . $name;
+>>>>>>> c4edbad54e22ddd2727e3324c0846a63491d1064
 });
 
 Route::get('/about', function () {
